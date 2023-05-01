@@ -30,8 +30,10 @@ Analyzing Statistical Measures
 - For the variable oldpeak we found
 
 Data transformation
-
-- When we plotted the data we found that most of the numerical features were already approximately normally distributed and did not need to be made normal. The only column that was significantly not normal was the column old peak. For this column we used a box-cox transformation. The boxcox method works by varying an exponential parameter lambda to find an optimal transformation of the distribution. Using a log transofrmation did not make this more normal so the box-cox method was used as an alternate method.
+The pre transformed data can be seen in "histogram of numerical features pretransform.jpeg"
+- When we plotted the data we found that most of the numerical features were already approximately normally distributed and did not need to be made normal. The only column that was significantly not normal was the column old peak. For this column we used a box-cox transformation. The boxcox method works by varying an exponential parameter lambda to find an optimal transformation of the distribution. Using a log transofrmation did not make this more normal so the box-cox method was used as an alternate method. We also z-score normalized each numerical feature to put them on the same scale for future analysis
+The transformed data can be seen in "histogram of numerical features posttransform.jpeg"
+- We only transformed numerical features. In the future we may use target encoding to transform the categroical features though this will be a future step not need in this analysis.
 
 Box-Plot Analysis
 
@@ -39,8 +41,13 @@ Box-Plot Analysis
 - From the boxplot for trestbps and chol we see that there are outliers that have been intentionally left in since we viewed them as important and they are also centered at 0 due to z scoring
 - From the boxplot for old peak we see that there is not really a lower hinge due to the exponential nature of the distribution - there are many values congregated in the lower region. This is also centered at 0 due to the z-scoring. 
 
+The final boxplots of numerical features can be seen in "final boxplot of numerical features.jpeg"
+
+
 Scatter-Plot Analysis
 
 - old peak looks to have higher number correlating towards target 1. Target 0 seems to be more aggregated towards the middle values
 - age, trest, chol look to be pretty evenly dispersed and any differences do not appear to be significant
 - Thalach has higher values being more associated with target 0
+
+The scatterplots can be seen in "scatterplot of numerical features vs. target.jpg"
