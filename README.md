@@ -20,13 +20,25 @@ Outliers
 
 Analyzing Statistical Measures
 
-- To analyze the statistical measures of our numerical values we generated five number summaries as well as skew and kurtosis.
-- For the variable age we found
-- For the variable trestbps we found
-- For the variable chol we found
-- For the variable thalach we found
+- To analyze the statistical measures of our numerical values we generated five number summaries as well as skew, mean and kurtosis.
+- For the variable age we found it to be between 28 and 77 with a mean around 52.8 . There appears to be very little skew and kurtosis as both are around 0. This indicated that the variable may be normally distributed.
+- For the variable trestbps we found the data to be between 92 and 200 with a mean around 132.6. The skewness and kurtosis measures are both under 1, which indicates that there is not much to be concerned about regarding tail values
+- For the variable chol we found the data to be between 69 and 603 with a mean of 247. There is a kurtosis over 4 and skew over 1. This is due to the nature of cholesterol, which can be very high in serious cases of heart disease. Therefore, we would expect a large positive skew and will not remove outliers here. The rest of the data appears to be normally distributed when plotted.
+- For the variable thalach we found that the data was between 69 and 202 with a mean of 140.6. There is 
 - For the variable oldpeak we found
 
 Data transformation
 
-- When we plotted the data we found that most of the numerical features were already approximately normally distributed and did not need to be made normal. The only column that was significantly not normal was the column old peak
+- When we plotted the data we found that most of the numerical features were already approximately normally distributed and did not need to be made normal. The only column that was significantly not normal was the column old peak. For this column we used a box-cox transformation. The boxcox method works by varying an exponential parameter lambda to find an optimal transformation of the distribution. Using a log transofrmation did not make this more normal so the box-cox method was used as an alternate method.
+
+Box-Plot Analysis
+
+- From the boxplot for age and thalach we see it centered at 0 and it looks to be normally distributed. This makes sense since we z-scored the data.
+- From the boxplot for trestbps and chol we see that there are outliers that have been intentionally left in since we viewed them as important and they are also centered at 0 due to z scoring
+- From the boxplot for old peak we see that there is not really a lower hinge due to the exponential nature of the distribution - there are many values congregated in the lower region. This is also centered at 0 due to the z-scoring. 
+
+Scatter-Plot Analysis
+
+- old peak looks to have higher number correlating towards target 1. Target 0 seems to be more aggregated towards the middle values
+- age, trest, chol look to be pretty evenly dispersed and any differences do not appear to be significant
+- Thalach has higher values being more associated with target 0
