@@ -1,10 +1,12 @@
 # ReidandBumJoonDE300Project
 
 To connect to postgres and create the database, first connect to a machine with postgres installed and run the following from the command line:
-bash run.sh. This will run the bash files postgres.sh and the files that create the database we will be using.
-
-To complete the exploratory data tasks use the following command from the command line:
-python3 proj.py
+1. bash run.sh
+2. docker exec -it projectpostgres bash 
+We are now inside the docker container
+3. python3 clean_data.py
+4. bash scripts/psql_create.sh
+5. python3 proj.py
 
 Algorithms and Reasoning for proj.py
 
